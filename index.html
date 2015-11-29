@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+
+    <!-- Include the AngularJS library -->
+  </head>
+  <body ng-app="ForecastApp">
+
+    <div class="main" ng-controller="MainController">
+      <div class="container">
+        <div>
+          <div>
+            <h1>{{location.fullnamel}}</h1>
+            <h2>5-day forecast</h2>
+            <div class="forecast" ng-repeat="day in fiveDay.days">
+              <div class="">
+                <div class="">
+                  <p>{{ day.datetime | date }}</p>
+                </div>
+                <div class="">
+                  <img ng-src="{{ day.icon }}">
+                </div>
+                <div class="">
+                </div>
+                <div class="">
+                  <p>{{ day.high }}&deg;</p>
+                </div>
+                <div class="">
+                  <p>{{ day.low }}&deg;</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Modules -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="app.js"></script>
+
+    <!-- Controllers -->
+    <script src="maincontroller.js"></script>
+
+    <!-- Services -->
+    <script src="forecast.js"></script>
+
+
+    <!-- Directives -->
+
+
+  </body>
+</html>
